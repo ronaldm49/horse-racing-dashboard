@@ -1,4 +1,4 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const API_URL = 'https://horse-racing-backend.fly.dev';
 
 export async function fetchRaces() {
     const res = await fetch(`${API_URL}/races`, { cache: 'no-store' });
