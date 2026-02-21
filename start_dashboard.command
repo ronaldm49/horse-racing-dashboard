@@ -16,7 +16,7 @@ EOF
 # Launch Backend in a new Terminal window/tab
 osascript <<EOF
 tell application "Terminal"
-    do script "cd '$DIR' && source backend/venv/bin/activate && uvicorn backend.main:app --reload --port 8000 || read -p 'Press Enter to close'"
+    do script "cd '$DIR/backend' && source venv/bin/activate && uvicorn main:app --reload --port 8000 || read -p 'Press Enter to close'"
 end tell
 EOF
 

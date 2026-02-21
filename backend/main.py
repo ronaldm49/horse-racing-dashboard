@@ -6,9 +6,9 @@ import asyncio
 import time
 from datetime import datetime, timedelta
 
-from .database import create_db_and_tables, get_session, engine
-from .models import Race, Runner, OddsHistory, WinnerHistory
-from .scraper import ZeturfScraper
+from database import create_db_and_tables, get_session, engine
+from models import Race, Runner, OddsHistory, WinnerHistory
+from scraper import ZeturfScraper
 
 app = FastAPI()
 
