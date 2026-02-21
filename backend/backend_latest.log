@@ -1,0 +1,100 @@
+[2m2026-02-21T12:14:25Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     Started server process [654]
+[2m2026-02-21T12:14:25Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     Waiting for application startup.
+[2m2026-02-21T12:14:29Z[0m proxy[891241f6ed6118] [32mcdg[0m [[34minfo[0m]waiting for machine to be reachable on 0.0.0.0:8000 (waited 5.272303774s so far)
+[2merror.message=[0m"failed to connect to machine: gave up after 15 attempts (in 8.277647418s)" [2m2026-02-21T12:14:32Z[0m proxy[891241f6ed6118] [32mcdg[0m [[31merror[0m]
+[2merror.message=[0m"instance refused connection. is your app listening on 0.0.0.0:8000? make sure it is not only listening on 127.0.0.1 (hint: look at your startup logs, servers often print the address they are listening on)" [2m2026-02-21T12:14:33Z[0m proxy[891241f6ed6118] [32mcdg[0m [[31merror[0m]
+[2m2026-02-21T12:14:38Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     Application startup complete.
+[2m2026-02-21T12:14:38Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2merror.message=[0m"could not find a good candidate within 40 attempts at load balancing" [2m2026-02-21T12:14:40Z[0m proxy [32mlhr[0m [[31merror[0m][2mrequest.url=[0m"https://horse-racing-backend.fly.dev/races" 
+[2m2026-02-21T12:14:46Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]Starting Orchestrator...
+[2m2026-02-21T12:14:46Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:59512 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:14:49Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     Application startup complete.
+[2m2026-02-21T12:14:49Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2m2026-02-21T12:17:44Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]Starting Orchestrator...
+[2m2026-02-21T12:17:44Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:57594 - "OPTIONS /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:17:44Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:39278 - "GET / HTTP/1.1" 404 Not Found
+[2m2026-02-21T12:17:44Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:39290 - "OPTIONS /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:17:44Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:57612 - "GET / HTTP/1.1" 404 Not Found
+[2m2026-02-21T12:18:02Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:61204 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:04Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:61688 - "POST /monitor?url=https%3A%2F%2Fwww.zeturf.fr%2Fen%2Fcourse-du-jour%2F2026-02-21%2FR2C6-nantes-prix-opera HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:04Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:61692 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:06Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:52680 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:08Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:52684 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:10Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:52696 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:10Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]Orchestrator: Starting task for Race 1
+[2m2026-02-21T12:18:10Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:64592 - "POST /monitor?url=https%3A%2F%2Fwww.zeturf.fr%2Fen%2Fcourse-du-jour%2F2026-02-21%2FR2C6-nantes-prix-opera HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:10Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]Task for Race 1: Page created.
+[2m2026-02-21T12:18:10Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:64618 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:14Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:33058 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:16Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:34308 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:18Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:34060 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:20Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:34522 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:22Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:34774 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:23Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:34310 - "POST /baseline/1 HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:23Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:41136 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:26Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:41138 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:28Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:35826 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:30Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:41144 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:32Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:36842 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:34Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:37294 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:36Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:42714 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:38Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:42726 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:40Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:42736 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:42Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:40104 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:45Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:40474 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:47Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:38492 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:49Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:41514 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:50Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:38502 - "POST /baseline/1 HTTP/1.1" 200 OK
+[2m2026-02-21T12:18:50Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:38514 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:37Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:42358 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:37Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m][32m INFO[0m Sending signal SIGINT to main child process w/ PID 648
+[2m2026-02-21T12:19:39Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:42374 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:40Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:42376 - "POST /monitor?url=https%3A%2F%2Fwww.zeturf.fr%2Fen%2Fcourse-du-jour%2F2026-02-21%2FR2C6-nantes-prix-opera HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:40Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:42382 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:42Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m][32m INFO[0m Sending signal SIGTERM to main child process w/ PID 648
+[2m2026-02-21T12:19:43Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m][32m INFO[0m Main child exited with signal (with signal 'SIGTERM', core dumped? false)
+[2m2026-02-21T12:19:43Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m][32m INFO[0m Starting clean up.
+[2m2026-02-21T12:19:43Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m][  330.437687] reboot: Restarting system
+[2m2026-02-21T12:19:43Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:56544 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:44Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]2026-02-21T12:19:44.464979654 [01KJ01X8AEPNKC2S59C7XC363H:main] Running Firecracker v1.12.1
+[2m2026-02-21T12:19:44Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]2026-02-21T12:19:44.465144252 [01KJ01X8AEPNKC2S59C7XC363H:main] Listening on API socket ("/fc.sock").
+[2m2026-02-21T12:19:45Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m][32m INFO[0m Starting init (commit: 350f2667)...
+[2m2026-02-21T12:19:45Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m][32m INFO[0m Preparing to run: `/bin/sh -c uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}` as root
+[2m2026-02-21T12:19:45Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m][32m INFO[0m [fly api proxy] listening at /.fly/api
+[2m2026-02-21T12:19:45Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:56918 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:45Z[0m runner[2867543a506498] [32mcdg[0m [[34minfo[0m]Machine started in 1.452s
+[2m2026-02-21T12:19:45Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Sending signal SIGINT to main child process w/ PID 649
+[2m2026-02-21T12:19:46Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]2026/02/21 12:19:46 INFO SSH listening listen_address=[fdaa:49:6684:a7b:10a:93:2720:2]:22
+[2m2026-02-21T12:19:47Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     Started server process [657]
+[2m2026-02-21T12:19:47Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     Waiting for application startup.
+[2m2026-02-21T12:19:47Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:57442 - "POST /baseline/1 HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:47Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:57490 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:49Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     172.16.36.82:58054 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:19:51Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Sending signal SIGTERM to main child process w/ PID 649
+[2m2026-02-21T12:19:51Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Main child exited with signal (with signal 'SIGTERM', core dumped? false)
+[2m2026-02-21T12:19:51Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Starting clean up.
+[2m2026-02-21T12:19:52Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][  328.321869] reboot: Restarting system
+[2m2026-02-21T12:19:52Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]2026-02-21T12:19:52.886449194 [01KJ01X879MS1KQA14GXEWDM1R:main] Running Firecracker v1.12.1
+[2m2026-02-21T12:19:52Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]2026-02-21T12:19:52.886571676 [01KJ01X879MS1KQA14GXEWDM1R:main] Listening on API socket ("/fc.sock").
+[2m2026-02-21T12:19:53Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Starting init (commit: 350f2667)...
+[2m2026-02-21T12:19:53Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Preparing to run: `/bin/sh -c uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}` as root
+[2m2026-02-21T12:19:53Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m [fly api proxy] listening at /.fly/api
+[2m2026-02-21T12:19:53Z[0m runner[891241f6ed6118] [32mcdg[0m [[34minfo[0m]Machine started in 1.153s
+[2merror.message=[0m"timed out while connecting to your instance. this indicates a problem with your app (hint: look at your logs and metrics)" [2m2026-02-21T12:19:54Z[0m proxy[891241f6ed6118] [32mcdg[0m [[31merror[0m]
+[2m2026-02-21T12:19:54Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]2026/02/21 12:19:54 INFO SSH listening listen_address=[fdaa:49:6684:a7b:16a:6521:ee69:2]:22
+[2merror.message=[0m"instance refused connection. is your app listening on 0.0.0.0:8000? make sure it is not only listening on 127.0.0.1 (hint: look at your startup logs, servers often print the address they are listening on)" [2m2026-02-21T12:20:01Z[0m proxy[2867543a506498] [32mcdg[0m [[31merror[0m]
+[2m2026-02-21T12:20:03Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     Started server process [655]
+[2m2026-02-21T12:20:03Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     Waiting for application startup.
+[2merror.message=[0m"instance refused connection. is your app listening on 0.0.0.0:8000? make sure it is not only listening on 127.0.0.1 (hint: look at your startup logs, servers often print the address they are listening on)" [2m2026-02-21T12:20:06Z[0m proxy[891241f6ed6118] [32mcdg[0m [[31merror[0m]
+[2m2026-02-21T12:20:10Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     Application startup complete.
+[2m2026-02-21T12:20:10Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2m2026-02-21T12:20:13Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]Starting Orchestrator...
+[2m2026-02-21T12:20:13Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]INFO:     172.16.27.122:43152 - "GET /races HTTP/1.1" 200 OK
+[2m2026-02-21T12:20:35Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     Application startup complete.
+[2m2026-02-21T12:20:35Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m]INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2m2026-02-21T12:20:47Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Sending signal SIGINT to main child process w/ PID 648
+[2m2026-02-21T12:20:52Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Sending signal SIGTERM to main child process w/ PID 648
+[2m2026-02-21T12:20:53Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Main child exited with signal (with signal 'SIGTERM', core dumped? false)
+[2m2026-02-21T12:20:53Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][32m INFO[0m Starting clean up.
+[2m2026-02-21T12:20:53Z[0m app[891241f6ed6118] [32mcdg[0m [[34minfo[0m][   60.849871] reboot: Restarting system
+[2m2026-02-21T12:22:01Z[0m app[2867543a506498] [32mcdg[0m [[34minfo[0m]2026/02/21 12:22:01 ERROR unexpected error fetching cert error="transient SSH server error: can't resolve _orgcert.internal"
