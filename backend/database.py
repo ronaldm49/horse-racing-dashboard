@@ -1,7 +1,13 @@
+import os
 from sqlmodel import create_engine, SQLModel
 from sqlalchemy.orm import sessionmaker
 
-sqlite_file_name = "database.db"
+# Use persistent path on Fly.io, local path otherwise
+if os.environ.get("FLY_APP_NAME"):
+    sqlite_file_name = "/app/data/database.db"
+else:
+    sqlite_file_name = "database.db"
+
 sqlite_url = f"sqlite:///{sqlite_file_name}"
 
 engine = create_engine(sqlite_url, echo=False)
