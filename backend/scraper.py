@@ -88,9 +88,14 @@ class ZeturfScraper:
             except Exception as e:
                 print(f"Goto warning (might be ok): {e}")
 
-            # Wait for the table to appear
+            # Wait for the table to appear manually
             try:
-                await page.wait_for_selector(".table-runners", state="attached", timeout=20000)
+                for _ in range(20):
+                    if await page.locator(".table-runners").count() > 0:
+                        break
+                    await asyncio.sleep(1)
+                else:
+                    raise Exception("Timeout manually waiting for .table-runners")
             except Exception as e:
                 html_content = await page.content()
                 print(f"Selector timeout. Page HTML preview: {html_content[:500]}")
