@@ -83,9 +83,18 @@ class ZeturfScraper:
             page = await self.context.new_page()
             should_close = True
         try:
-            await page.goto(url, wait_until="domcontentloaded")
+            try:
+                await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+            except Exception as e:
+                print(f"Goto warning (might be ok): {e}")
+
             # Wait for the table to appear
-            await page.wait_for_selector(".table-runners", timeout=20000)
+            try:
+                await page.wait_for_selector(".table-runners", timeout=20000)
+            except Exception as e:
+                html_content = await page.content()
+                print(f"Selector timeout. Page HTML preview: {html_content[:500]}")
+                raise e
 
             # Get race title and time
             title_locator = page.locator("h1")
