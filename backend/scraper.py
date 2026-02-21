@@ -90,7 +90,7 @@ class ZeturfScraper:
 
             # Wait for the table to appear
             try:
-                await page.wait_for_selector(".table-runners", timeout=20000)
+                await page.wait_for_selector(".table-runners", state="attached", timeout=20000)
             except Exception as e:
                 html_content = await page.content()
                 print(f"Selector timeout. Page HTML preview: {html_content[:500]}")
