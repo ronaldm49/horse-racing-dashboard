@@ -85,7 +85,7 @@ class ZeturfScraper:
         try:
             await page.goto(url, wait_until="domcontentloaded")
             # Wait for the table to appear
-            await page.wait_for_selector("table", timeout=10000)
+            await page.wait_for_selector(".table-runners", timeout=20000)
 
             # Get race title and time
             title_locator = page.locator("h1")
