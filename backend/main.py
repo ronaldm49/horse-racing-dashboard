@@ -177,16 +177,37 @@ async def monitor_race_task(race_id: int):
             except Exception as e:
                 print(f"Error in task {race_id}: {e} (Resetting page)")
                 # Kill bad page
-                try:
-                    await page.close()
-                except:
-                    pass
+                if page:
+                    try:
+                        await page.close()
+                    except:
+                        pass
                 page = None
             
             # Sleep logic
             elapsed = time.time() - start_time
-            sleep_time = max(0.1, 2.0 - elapsed)
-            # print(f"Race {race_id} took {elapsed:.2f}s. Sleeping {sleep_time:.2f}s")
+            
+            # Dynamic sleep based on Zeturf's internal TTL
+            next_update = (scrape_result.get("next_update_seconds") if scrape_result else None)
+            
+            if next_update and next_update > 10:
+                # If race is starting soon (< 5 mins), poll faster regardless of TTL
+                is_imminent = False
+                with Session(engine) as session:
+                    race = session.get(Race, race_id)
+                    if race and race.start_time:
+                         if (race.start_time - datetime.utcnow()).total_seconds() < 300:
+                             is_imminent = True
+                
+                if is_imminent:
+                    sleep_time = max(0.5, 2.0 - elapsed)
+                else:
+                    # Respect Zeturf's TTL but cap it to 30s to stay responsive to UI actions
+                    sleep_time = min(next_update - 1, 30.0)
+            else:
+                sleep_time = max(0.5, 2.0 - elapsed)
+                
+            # print(f"Race {race_id} next update in {next_update}s. Sleeping {sleep_time:.1f}s")
             await asyncio.sleep(sleep_time)
 
     except asyncio.CancelledError:

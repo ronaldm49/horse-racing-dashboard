@@ -83,23 +83,44 @@ class ZeturfScraper:
             page = await self.context.new_page()
             should_close = True
         try:
-            try:
-                await page.goto(url, wait_until="domcontentloaded", timeout=20000)
-            except Exception as e:
-                print(f"Goto warning (might be ok): {e}")
+            current_url = page.url
+            is_same_page = (current_url == url or current_url == url + "/")
+            
+            if is_same_page:
+                # Try to use the "Refresh odds" button instead of a full reload
+                refresh_btn = page.locator("#update-cotes-btn")
+                if await refresh_btn.count() > 0:
+                    if await refresh_btn.is_enabled():
+                        # print(f"Refreshing odds via button for {url}...")
+                        await refresh_btn.click()
+                        # Small wait for AJAX update to apply to DOM
+                        await asyncio.sleep(1.5)
+                    else:
+                        # Button is in cooldown, odds are already as fresh as Zeturf allows
+                        pass
+                else:
+                    # No button found, maybe fallback to reload if it's been a while?
+                    pass
+            else:
+                try:
+                    await page.goto(url, wait_until="domcontentloaded", timeout=20000)
+                except Exception as e:
+                    print(f"Goto warning (might be ok): {e}")
 
-            # Wait for the table to appear manually
+            # Wait for the table to appear manually if not already there
             try:
-                for _ in range(20):
+                for _ in range(10): 
                     if await page.locator(".table-runners").count() > 0:
                         break
-                    await asyncio.sleep(1)
+                    await asyncio.sleep(0.5)
                 else:
-                    raise Exception("Timeout manually waiting for .table-runners")
+                    if not is_same_page:
+                        raise Exception("Timeout manually waiting for .table-runners")
             except Exception as e:
-                html_content = await page.content()
-                print(f"Selector timeout. Page HTML preview: {html_content[:500]}")
-                raise e
+                if not is_same_page:
+                     html_content = await page.content()
+                     print(f"Selector timeout. Page HTML preview: {html_content[:500]}")
+                     raise e
 
             # Get race title and time
             title_locator = page.locator("h1")
@@ -198,6 +219,18 @@ class ZeturfScraper:
             except Exception as e:
                 print(f"Error finding next race URL: {e}")
 
+            # Extract secondary metadata
+            next_update_seconds = None
+            try:
+                # Check for discrete TTL elements Zeturf uses for internal state
+                ttl_el = page.locator("#dermin-refresh").first
+                if ttl_el and await ttl_el.count() > 0:
+                    ttl_val = await ttl_el.get_attribute("data-ttl")
+                    if ttl_val and str(ttl_val).isdigit():
+                        next_update_seconds = int(ttl_val)
+            except:
+                pass
+
             # Get all runner rows
             rows = await page.locator("tr").all()
             
@@ -291,7 +324,14 @@ class ZeturfScraper:
                     "is_non_runner": is_non_runner
                 })
 
-            return {"title": race_title, "runners": runners_data, "time_str": race_time_str, "next_race_url": next_race_url}
+            return {
+                "title": race_title, 
+                "runners": runners_data, 
+                "time_str": race_time_str, 
+                "next_race_url": next_race_url,
+                "next_update_seconds": next_update_seconds,
+                "timestamp": race_timestamp
+            }
             
         except Exception as e:
             print(f"Error scraping {url}: {e}")
